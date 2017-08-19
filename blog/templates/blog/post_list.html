@@ -3,21 +3,19 @@
         <title>Richa's blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">Richa's Blog</a></h1>
-        </div>
+    <div>
+    <h1><a href="/">Richa's Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: Aug 18, 2017, 14:45</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Hello, I am writting my first post as a part of projectwith Djangogirls. It is amazing feeling,especially since i come from an accounting background to write your own code(though most is automated)</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 
-        <div>
-            <p>published: Aug 19,2017, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Today, i will write about my experience with coding. i just dont seem to get past the brackets and its too confusing for me :(</p>
-        </div>
+
     </body>
 </html>
 
